@@ -1,0 +1,8 @@
+*.pyc
+*.np
+env/*
+compute_ap*
+ranks_*
+BLCF_*
+data/*
+test/*
