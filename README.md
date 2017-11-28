@@ -1,4 +1,4 @@
-# Saliency Weighted Convolutional Features for Instance Search
+# Salbow
 
 ## Abstract
 This work explores attention models to weight the contribution of local convolutional representations for the instance search task. We present a retrieval framework based on bags of local convolutional features (BLCF) that benefits from saliency weighting to build an efficient image representation. The use of human visual attention models (saliency) allows significant improvements in retrieval performance without the need to conduct region analysis or spatial verification, and without requiring any feature
@@ -29,18 +29,20 @@ This repo contains python scripts to build Bag of Visual Words based on local CN
  python install_vlfeat.py
 ```
 * Lastly, modify  *config.py* file to set custom paths:
-
-````
-# dataset images are automatically downloaded in:
+Dataset images are automatically downloaded in:
+```
 PATH_DATASET='custom/dataset/path'
+```
+[Precomputed data](https://drive.google.com/drive/folders/18NmIcyEIJ8p9GO14rUB3n3wTnx8pezt_) contained saliency predictions for the three datasets, and BLCF models, assignment maps and raw features.
 
-# saliency masks for each of the datasets are stored in:
+saliency masks for each of the datasets are stored in:
+```
 PATH_SALIENCY='custom/saliency/path'
-
-# BLCF models, features and assignment maps are stored in:
+```
+BLCF models, features and assignment maps are stored in:
+```
 PATH_OUTPUT='custom/output/path'
 ````
-
 
 ### How to run it
 ```
@@ -64,7 +66,7 @@ mAP = 0.697773325515
 ```
 The command above applies saliency weighting from [SalGAN](https://imatge-upc.github.io/saliency-salgan-2017/)
 to the assignment maps of Instre. Additionally, query expansion (top 10) images in performed.
-Script with [provided data](https://drive.google.com/drive/folders/18NmIcyEIJ8p9GO14rUB3n3wTnx8pezt_)
+Script with [precomputed data](https://drive.google.com/drive/folders/18NmIcyEIJ8p9GO14rUB3n3wTnx8pezt_)
 ```
 
 ```
