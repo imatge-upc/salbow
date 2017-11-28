@@ -64,7 +64,7 @@ mAP = 0.697773325515
 ```
 The command above applies saliency weighting from [SalGAN](https://imatge-upc.github.io/saliency-salgan-2017/)
 to the assignment maps of Instre. Additionally, query expansion (top 10) images in performed.
-Script with [provided data](https://drive.google.com/drive/folders/18NmIcyEIJ8p9GO14rUB3n3wTnx8pezt_) returns:
+Script with [provided data](https://drive.google.com/drive/folders/18NmIcyEIJ8p9GO14rUB3n3wTnx8pezt_)
 ```
 
 ```

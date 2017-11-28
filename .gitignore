@@ -8,4 +8,5 @@ data/*
 data
 saliency
 output
+datasets
 test/*
