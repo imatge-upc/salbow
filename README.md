@@ -36,10 +36,9 @@ Usage: python evaluation.py [OPTIONS]
 
 Options:
   --dataset TEXT     Selected dataset for extraction  (availables 'instre' (default), 'oxford', 'paris')
-  --path_data TEXT   path to store models             (default 'data/')
   --layer TEXT       layer from vgg16                 (default 'conv5_1')
   --max_dim INTEGER  Max dimension of images          (default '340')
   --weighting TEXT   Spatial weighting scheme         (availables None (default), 'gaussian', 'l2norm', 'SALGAN')
-  --global_search    Global Search for queries        
-  --query_expansion  Apply Average Query Expansion    
+  --global_search    Flag to apply global search for queries        
+  --query_expansion  Flag to apply Average Query Expansion    
 ```
