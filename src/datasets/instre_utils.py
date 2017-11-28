@@ -1,9 +1,11 @@
 import numpy as np
-import sys, os, glob
+import os, glob
 from scipy.io import loadmat
+from scipy.io import loadmat
+
+import sys
+sys.path.insert(0, '../../')
 from config import PATH_DATASET
-from IPython import embed
-from scipy.io import loadmat
 
 
 # make sure we have the data

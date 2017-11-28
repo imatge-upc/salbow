@@ -1,8 +1,9 @@
 import numpy as np
 import os, sys, glob
-from config import PATH_DATASET
 import shutil
-from IPython import embed
+
+sys.path.insert(0, '../../')
+from config import PATH_DATASET
 
 
 # make sure we have the data
@@ -59,7 +60,6 @@ def get_data():
 def make_target_list():
     if not os._exists( os.path.join(PATH_DATASET, 'oxford', 'imlist.txt') ):
         path_list = os.path.join( PATH_DATASET, 'oxford', 'images' )
-        print os.path.exists( path_list )
         fid = open( os.path.join(PATH_DATASET, 'oxford', 'imlist.txt'), 'w' )
         lst = os.listdir( path_list )
         lst.sort()

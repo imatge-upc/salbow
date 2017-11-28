@@ -1,8 +1,9 @@
 import numpy as np
-import os, glob
-from config import PATH_DATASET
-from IPython import embed
+import sys, os, glob
 import shutil
+
+sys.path.insert(0, '../../')
+from config import PATH_DATASET
 
 # make sure we have the data
 def get_data():

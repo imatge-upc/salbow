@@ -1,5 +1,5 @@
 import numpy as np
-import os
+import os, sys
 from tqdm import tqdm
 
 from collections import Counter
@@ -90,8 +90,8 @@ def load_targets( ds, path_assignments, mask=None ):
         assignments = np.load(path)
         weights = None
 
-        if mask in ds.saliency_masks:
-            weights = ds.get_mask_saliency( i, size=assignments.shape, mode='keyframes')
+        if mask is None:
+            weights = None
         elif mask == 'gaussian':
             weights = gaussian_weights(assignments.shape)
         elif mask == 'l2norm':
@@ -99,6 +99,12 @@ def load_targets( ds, path_assignments, mask=None ):
             path = path_assignments.replace( 'assignments', 'conv_features' )
             feat = np.load( os.path.join( path, "{}.npy".format(i) ) )
             weights = l2_norm_maps( feat, dim_r=assignments.shape )
+        elif mask in ds.saliency_masks:
+            weights = ds.get_mask_saliency( i, size=assignments.shape, mode='keyframes')
+        else:
+            print "--> Mask '{}' is not valid!".format( mask )
+            print
+            sys.exit()
 
         bow = get_bow( assignments, weights=weights)
 
@@ -169,14 +175,13 @@ def query_expansion( targets, queries, ranks, N=10 ):
         new = None
         for k in range(N+1):
             if new is None:
-                new = queries[i,:].toarray()
+                new = queries[i,:]
             else:
-                new = np.vstack( [new, targets[idx[k-1],:].toarray()] )
-        new = new.mean(axis=0)
-
+                new = vstack( (new, targets[idx[k-1],:]) )
+        new = csr_matrix(new.sum(axis=0))
         if new_queries is None:
             new_queries = new
-        else:
-            new_queries = np.vstack( [new_queries, new] )
+            new_queries = vstack( (new_queries, new) )
+
     new_queries = normalize( new_queries )
     return new_queries

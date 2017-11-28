@@ -15,8 +15,8 @@ This repo contains python scripts to build Bag of Visual Words based on local CN
 
 * Create a virtual enviroment [how to create a virtual enviroment](http://docs.python-guide.org/en/latest/dev/virtualenvs/).
 ```
- virtualenv ~/BLCF_saliency
- source ~/BLCF_saliency/bin/activate
+ virtualenv ~/salbow
+ source ~/salbow/bin/activate
 ```
 * The code runs with CUDA Version 7.5.18. For python dependencies run:
 ```
@@ -28,7 +28,19 @@ This repo contains python scripts to build Bag of Visual Words based on local CN
 ```
  python install_vlfeat.py
 ```
-* Lastly, modify the paths to store the datasets and saliency predictions in  *src/dataset/config.py* file located in the folder named as the dataset. (default location is 'data/').
+* Lastly, modify  *config.py* file to set custom paths:
+
+````
+# dataset images are automatically downloaded in:
+PATH_DATASET='custom/dataset/path'
+
+# saliency masks for each of the datasets are stored in:
+PATH_SALIENCY='custom/saliency/path'
+
+# BLCF models, features and assignment maps are stored in:
+PATH_OUTPUT='custom/output/path'
+````
+
 
 ### How to run it
 ```
@@ -41,4 +53,18 @@ Options:
   --weighting TEXT   Spatial weighting scheme         (availables None (default), 'gaussian', 'l2norm', 'SALGAN')
   --global_search    Flag to apply global search for queries        
   --query_expansion  Flag to apply Average Query Expansion    
+```
+Example:
+```
+python evaluation.py --dataset 'instre' --query_expansion --weighting 'SALGAN'
+
+ret:
+mAP = 0.697773325515
++QE mAP = 0.757181174096
+```
+The command above applies saliency weighting from [SalGAN](https://imatge-upc.github.io/saliency-salgan-2017/)
+to the assignment maps of Instre. Additionally, query expansion (top 10) images in performed.
+Script with [provided data](https://drive.google.com/drive/folders/18NmIcyEIJ8p9GO14rUB3n3wTnx8pezt_) returns:
+```
+
 ```

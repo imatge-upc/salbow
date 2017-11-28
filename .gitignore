@@ -5,4 +5,7 @@ compute_ap*
 ranks_*
 BLCF_*
 data/*
+data
+saliency
+output
 test/*

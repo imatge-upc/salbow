@@ -1,8 +1,12 @@
-from config import PATH_DATASET, PATH_SALIENCY, SALIENCY_MASKS, SALIENCY_URL
 import os
 import numpy as np
 import cv2
 from skimage.measure import block_reduce
+
+
+import sys
+sys.path.insert(0, '../../')
+from config import PATH_DATASET, PATH_SALIENCY, MASKS
 from IPython import embed
 
 def saliency_mask_blocks( path_saliency, name, size, ext='.png' ):
@@ -77,22 +81,21 @@ class Dataset( ):
         # make full path
         self.keyframes = np.array( [os.path.join( self.path_dataset, 'images',k ) for k in self.keyframes] )
         self.q_keyframes = np.array( [os.path.join( self.path_dataset, 'images',k ) for k in self.q_keyframes] )
-        self.saliency_masks = SALIENCY_MASKS
 
-        if self.mask in SALIENCY_MASKS:
-            self.path_saliency = os.path.join(PATH_SALIENCY, self.dataset, self.mask)
-            # check is it does not exists
-            if not os.path.exists(os.path.join(PATH_SALIENCY, self.dataset, self.mask)):
-                p_dest = os.path.join(PATH_SALIENCY, self.dataset)
-                if not os.path.exists( p_dest ):
-                    os.makedirs( p_dest )
-                # download saliency
-                cmd = "wget -O {}/tmp.zip '{}'".format( p_dest, SALIENCY_URL["{}_{}".format(dataset, self.mask)] )
-                os.system(cmd)
-                cmd = "unzip '{}/tmp.zip' -d '{}'".format( p_dest, p_dest )
-                os.system(cmd)
-                os.system( "rm '{}/tmp.zip'".format(p_dest) )
-
+        # saliency path
+        self.saliency_masks = MASKS
+        if self.mask is not None and self.mask in MASKS:
+            p_dest = os.path.join(PATH_SALIENCY, self.dataset)
+            if not os.path.exists( p_dest ):
+                print "\nNot saliency masks found in ''{}''\n".format( p_dest )
+                print "Download pre-computed saliency masks from >> 'https://drive.google.com/drive/folders/18NmIcyEIJ8p9GO14rUB3n3wTnx8pezt_?usp=sharing'"
+                print "     - set 'PATH_SALIENCY' in config.py"
+                print "     - Folder structure: PATH_SALIENCY/[dataset]/[mask]'"
+                print
+                sys.exit()
+            else:
+                # get list of available saliency masks
+                self.path_saliency = os.path.join(PATH_SALIENCY, self.dataset, self.mask)
 
     def get_mask_crop_query( self, q, ass_dim=None ):
         """ Get mask for a given query and resize to the feature map dimension
@@ -147,7 +150,6 @@ class Dataset( ):
         if self.dataset == 'instre':
             from instre_utils import compute_map
             mAP = compute_map(ranks)
-            print np.mean(mAP)
 
         elif self.dataset == 'oxford':
             from oxford_utils import compute_map

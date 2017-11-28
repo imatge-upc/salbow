@@ -2,11 +2,16 @@ import click
 from IPython import embed
 import numpy as np
 import os
-from src.datasets.datasets import Dataset
-from src.datasets.config import PATH_OUTPUT
-from utils import compute_assignments
-from src.BLCF.utils_BLCF import load_targets, load_queries, save_sparse_csr, load_sparse_csr
-from src.BLCF.utils_BLCF import query_expansion as aqe
+from src.datasets import Dataset
+from config import PATH_OUTPUT
+
+
+from src import extract_raw_features
+from src import compute_assignments
+
+from src import load_targets, load_queries, save_sparse_csr, load_sparse_csr
+from src import aqe
+
 
 @click.command()
 @click.option( '--dataset', default='instre', help='Selected dataset for extraction' )
@@ -23,9 +28,13 @@ def main(dataset, layer, max_dim, weighting, global_search, query_expansion):
     # init dataset information
     ds = Dataset( dataset, mask=weighting )
 
+    # check if l2weighting
+    if weighting == 'l2norm':
+        # check that raw features exist
+        path_raw_features = extract_raw_features( ds, PATH_OUTPUT, layer, max_dim, mode='keyframes' )
+
     # path to inv file
     path_file_keyframes = os.path.join( PATH_OUTPUT, 'inv_files', dataset, str(weighting), layer, str(max_dim) )
-
     # check if inverted file has been computed
     if os.path.exists( os.path.join( path_file_keyframes,'keyframes.npz') ):
         # load sparse matrix
