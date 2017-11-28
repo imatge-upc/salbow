@@ -53,7 +53,7 @@ class BoW_aggregator():
             path_features     - abs path to raw features extracted from VGG16
             path_assignments  - path to store assignment maps
             interpolation     - resize raw features to obtain high ressolution on
-                                assignment maps (only applied on queries)
+                                assignment maps
         """
 
         if not os.path.exists( path_assignments ):

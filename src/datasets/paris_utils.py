@@ -76,7 +76,7 @@ def make_target_list():
         # check if corrupted list is downloaded
         if not os.path.exists( file_corrupted ):
             # download
-            cmd = "wget http://www.robots.ox.ac.uk/~vgg/data/parisbuildings/corrupt.txt -O {}/corrupt.txt".format(PATH_DATASET['paris'])
+            cmd = "wget http://www.robots.ox.ac.uk/~vgg/data/parisbuildings/corrupt.txt -O {}/corrupt.txt".format(os.path.join(PATH_DATASET, 'paris' ))
             os.system( cmd )
 
         corrupted_list = np.loadtxt( file_corrupted, dtype='str' )

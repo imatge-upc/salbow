@@ -1,5 +1,6 @@
 PATH_DATASET='data/datasets'
-PATH_SALIENCY='data/saliency'
+PATH_SALIENCY='data/saliency_TEST'
+PATH_OUTPUT='data/output'
 
 SALIENCY_MASKS = ['SALGAN']
 SALIENCY_URL={

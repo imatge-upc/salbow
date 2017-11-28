@@ -9,10 +9,10 @@ def extract_raw_features( ds, path_data, layer, max_dim, mode='keyframes' ):
 
     args:
         Dabaset object
-        path_data -- where to store features PATH_DATA/dataset/conv_features/MODE/LAYER/MAX_DIM
-        layer -- layer to store (conv5_1)
-        max_dim -- max dimension to resize image keeping aspect ratio (340)
-        mode -- whether to extract keyframes or queries
+        path_data       -- where to store features PATH_DATA/dataset/conv_features/MODE/LAYER/MAX_DIM
+        layer           -- layer to store (conv5_1)
+        max_dim         -- max dimension to resize image keeping aspect ratio (340)
+        mode            -- whether to extract keyframes or queries
     """
     # path to store raw features for targets
     path_raw_features = os.path.join( path_data, ds.dataset, 'conv_features', mode, layer, str(max_dim) )
@@ -29,10 +29,12 @@ def compute_assignments( ds, path_data, layer, max_dim, mode='keyframes', interp
     Function to compute assignment maps.
 
     args: Dataset object
-          path_data -- where to store features PATH_DATA/dataset/conv_features/MODE/LAYER/MAX_DIM
-          layer -- layer to store (conv5_1)
-          max_dim -- max dimension to resize image keeping aspect ratio (340)
-          mode -- whether to extract keyframes or queries
+          path_data       -- where to store features PATH_DATA/dataset/conv_features/MODE/LAYER/MAX_DIM
+          layer           -- layer to store (conv5_1)
+          max_dim         -- max dimension to resize image keeping aspect ratio (340)
+          mode            -- whether to extract keyframes or queries
+          interpolate     -- Whether to interpolate or not raw features to obtain higher ressolution
+                             assignment map. (1= No interpolation/ 2= double each spatial dimension)
     """
     # make sure features exist
     path_raw_features = extract_raw_features( ds, path_data, layer, max_dim, mode='keyframes' )

@@ -37,8 +37,8 @@ def get_local_features( path_features, N_max=1568112):
         feat = np.reshape( feat, (r*c, -1) )
         data.extend(feat)
         count +=r*c
-#        if count > N_max:
-#            break
+        if count > 3000000:
+            break
     data = np.array(data)
     idx = np.arange(data.shape[0])
     np.random.shuffle(idx)
