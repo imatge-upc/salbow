@@ -1,4 +1,4 @@
-# Salbow
+# Saliency Weighted Convolutional features for Instance Search
 
 ## Abstract
 This work explores attention models to weight the contribution of local convolutional representations for the instance search task. We present a retrieval framework based on bags of local convolutional features (BLCF) that benefits from saliency weighting to build an efficient image representation. The use of human visual attention models (saliency) allows significant improvements in retrieval performance without the need to conduct region analysis or spatial verification, and without requiring any feature
@@ -65,8 +65,5 @@ mAP = 0.697773325515
 +QE mAP = 0.757181174096
 ```
 The command above applies saliency weighting from [SalGAN](https://imatge-upc.github.io/saliency-salgan-2017/)
-to the assignment maps of Instre. Additionally, query expansion (top 10) images in performed.
-Script with [precomputed data](https://drive.google.com/drive/folders/18NmIcyEIJ8p9GO14rUB3n3wTnx8pezt_)
-```
-
+to the assignment maps of Instre, reporting mAP when performing query expansion (top 10 retrieved images). Results using [precomputed data](https://drive.google.com/drive/folders/18NmIcyEIJ8p9GO14rUB3n3wTnx8pezt_).
 ```
