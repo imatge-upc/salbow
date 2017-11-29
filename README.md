@@ -5,7 +5,7 @@
 
 | ![Eva Mohedano][EvaMohedano-photo] |  ![Kevin McGuinness][KevinMcGuinness-photo] |  ![Xavier Giro-i-Nieto][XavierGiro-photo] | ![Noel O'Connor][NoelOConnor-photo]  | 
 |:-:|:-:|:-:|:-:|
-| [Eva Mohedano][EvaMohedano-web]  |  [Kevin McGuinness][KevinMcGuinness-web]   | [Xavier Giro-i-Nieto][XavierGiro-web]   | [Noel O'Connor][NoelOConnor-web]   | 
+| [Eva Mohedano](EvaMohedano-web)  |  [Kevin McGuinness](KevinMcGuinness-web)   | [Xavier Giro-i-Nieto](XavierGiro-web)   | [Noel O'Connor](NoelOConnor-web)   | 
 [EvaMohedano-web]: https://www.insight-centre.org/users/eva-mohedano)
 [KevinMcGuinness-web]: https://www.insight-centre.org/users/kevin-mcguinness
 [XavierGiro-web]: https://imatge.upc.edu/web/people/xavier-giro
@@ -21,7 +21,7 @@ A joint collaboration between:
 
 | ![logo-insight] | ![logo-dcu] | ![logo-upc] | ![logo-etsetb] | ![logo-gpi] | 
 |:-:|:-:|:-:|:-:|:-:|
-| [Insight Centre for Data Analytics][insight-web] | [Dublin City University (DCU)][dcu-web]  |[Universitat Politecnica de Catalunya (UPC)][upc-web]   | [UPC ETSETB TelecomBCN][etsetb-web]  | [UPC Image Processing Group][gpi-web] | 
+| [Insight Centre for Data Analytics](insight-web) | [Dublin City University (DCU)](dcu-web)  |[Universitat Politecnica de Catalunya (UPC)](upc-web)   | [UPC ETSETB TelecomBCN](etsetb-web)  | [UPC Image Processing Group](gpi-web) | 
 
 [insight-web]: https://www.insight-centre.org/ 
 [dcu-web]: http://www.dcu.ie/
