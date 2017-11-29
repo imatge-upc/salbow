@@ -3,7 +3,7 @@
 
 | ![Eva Mohedano][EvaMohedano-photo] |  ![Kevin McGuinness][KevinMcGuinness-photo] |  ![Xavier Giro-i-Nieto][XavierGiro-photo] | ![Noel O'Connor][NoelOConnor-photo]  | 
 |:-:|:-:|:-:|:-:|
-| [Eva Mohedano](https://www.insight-centre.org/users/eva-mohedano)  |  [Kevin McGuinness](https://www.insight-centre.org/users/eva-mohedano)   | [Xavier Giro-i-Nieto](https://imatge.upc.edu/web/people/xavier-giro)   | [Noel O'Connor](https://www.insight-centre.org/users/noel-oconnor)   | 
+| [Eva Mohedano](https://www.insight-centre.org/users/eva-mohedano)  |  [Kevin McGuinness](http://www.eeng.dcu.ie/~mcguinne/)   | [Xavier Giro-i-Nieto](https://imatge.upc.edu/web/people/xavier-giro)   | [Noel O'Connor](https://www.insight-centre.org/users/noel-oconnor)   | 
 
 
 [EvaMohedano-photo]: https://raw.githubusercontent.com/imatge-upc/retrieval-2016-lostobject/master/authors/Eva.jpg?token=AKsMd4iuttxHH44mYL3mPpJEtSvXVXF8ks5Xe-AWwA%3D%3D "Eva Mohedano" 
