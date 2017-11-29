@@ -1,8 +1,6 @@
 # Saliency Weighted Convolutional features for Instance Search
 
 
-
-
 | ![Eva Mohedano][EvaMohedano-photo] |  ![Kevin McGuinness][KevinMcGuinness-photo] |  ![Xavier Giro-i-Nieto][XavierGiro-photo] | ![Noel O'Connor][NoelOConnor-photo]  | 
 |:-:|:-:|:-:|:-:|
 | [Eva Mohedano](https://www.insight-centre.org/users/eva-mohedano)  |  [Kevin McGuinness](https://www.insight-centre.org/users/eva-mohedano)   | [Xavier Giro-i-Nieto](https://imatge.upc.edu/web/people/xavier-giro)   | [Noel O'Connor](https://www.insight-centre.org/users/noel-oconnor)   | 
@@ -102,16 +100,16 @@ to the assignment maps of Instre, reporting mAP when performing query expansion 
 
 ## Acknowledgements
 
+|   |   |
 |:--|:-:|
-|  We gratefully acknowledge the support of [NVIDIA Corporation](http://www.nvidia.com/content/global/global.php) with the donation of the GeoForce GTX [Titan Z](http://www.nvidia.com/gtx-700-graphics-cards/gtx-titan-z/) and [Titan X](http://www.geforce.com/hardware/desktop-gpus/geforce-gtx-titan-x) used in this work. |  ![logo-nvidia] |
+|  This publication has emanated from research conducted with the financial support of Science Foundation Ireland (SFI) under grant number SFI/12/RC/2289. |  ![logo-ireland] |
 |  The Image ProcessingGroup at the UPC is a [SGR14 Consolidated Research Group](https://imatge.upc.edu/web/projects/sgr14-image-and-video-processing-group) recognized and sponsored by the Catalan Government (Generalitat de Catalunya) through its [AGAUR](http://agaur.gencat.cat/en/inici/index.html) office. |  ![logo-catalonia] |
 |  This work has been developed in the framework of the project [BigGraph TEC2013-43935-R](https://imatge.upc.edu/web/projects/biggraph-heterogeneous-information-and-graph-signal-processing-big-data-era-application), funded by the Spanish Ministerio de Economía y Competitividad and the European Regional Development Fund (ERDF).  | ![logo-spain] | 
-|  This publication has emanated from research conducted with the financial support of Science Foundation Ireland (SFI) under grant number SFI/12/RC/2289. |  ![logo-ireland] |
 
-[logo-nvidia]: https://raw.githubusercontent.com/imatge-upc/saliency-2016-cvpr/master/logos/nvidia.jpg "Logo of NVidia"
+[logo-ireland]: https://raw.githubusercontent.com/imatge-upc/saliency-2016-cvpr/master/logos/sfi.png "Logo of Science Foundation Ireland"
 [logo-catalonia]: https://raw.githubusercontent.com/imatge-upc/saliency-2016-cvpr/master/logos/generalitat.jpg "Logo of Catalan government"
 [logo-spain]: https://raw.githubusercontent.com/imatge-upc/saliency-2016-cvpr/master/logos/MEyC.png "Logo of Spanish government"
-[logo-ireland]: https://raw.githubusercontent.com/imatge-upc/saliency-2016-cvpr/master/logos/sfi.png "Logo of Science Foundation Ireland"
+
 
 ## Contact
 
