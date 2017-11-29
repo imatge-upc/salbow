@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Saliency Weighted Convolutional Features for Instance Search</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Saliency Weighted Convolutional Features for Instance Search</h1>
+      <a href="https://github.com/imatge-upc/salbow" class="btn">View on GitHub</a>
+      <a href="https://github.com/imatge-upc/salbow/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/imatge-upc/salbow/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <table>
+<thead>
+<tr>
+<th align="center"><img src="https://raw.githubusercontent.com/evamohe/BoW_CNN_InstanceSearch/master/authors/logo_1.jpg?token=AHPpwJEFJz9ZB5Q5RyZ_O6HuU7_S2yp-ks5X1vMgwA%3D%3D" alt="Logo Icmr"></th>
+<th>
+<a href="http://www.icmr2016.com/awards.html">Best Poster Award</a> at the <a href="http://www.icmr2016.com/index.html">ACM International Conference on Multimedia Retrieval (ICMR) 2016</a>
+</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th align="center"><img src="https://raw.githubusercontent.com/imatge-upc/retrieval-2016-lostobject/master/authors/Eva.jpg?token=AKsMd4iuttxHH44mYL3mPpJEtSvXVXF8ks5Xe-AWwA%3D%3D" alt="Eva Mohedano" title="Eva Mohedano"></th>
+<th align="center"><img src="https://raw.githubusercontent.com/imatge-upc/retrieval-2016-lostobject/master/authors/Kevin.jpg?token=AKsMd4VU31T7Bh8CztufWEWNudazbB_Uks5Xe-AxwA%3D%3D" alt="Kevin McGuinness" title="Kevin McGuinness"></th>
+<th align="center"><img src="https://raw.githubusercontent.com/evamohe/BoW_CNN_InstanceSearch/master/authors/giro.jpg?token=AHPpwDdVdPYfMIwMBgHbjK9pPMJva1GOks5X1vHIwA%3D%3D" alt="Xavier Giro-i-Nieto" title="Xavier Giro-i-Nieto"></th>
+<th align="center"><img src="https://raw.githubusercontent.com/imatge-upc/retrieval-2016-lostobject/master/authors/Noel.jpg?token=AKsMdyemO5eJke9B9rqdRtA7otJscq1wks5Xe-BEwA%3D%3D" alt="Noel O'Connor" title="Noel O'Connor"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><a href="https://www.insight-centre.org/users/eva-mohedano">Eva Mohedano</a></td>
+<td align="center"><a href="https://www.insight-centre.org/users/kevin-mcguinness">Kevin McGuinness</a></td>
+<td align="center"><a href="https://imatge.upc.edu/web/people/xavier-giro">Xavier Giro-i-Nieto</a></td>
+<td align="center"><a href="https://www.insight-centre.org/users/noel-oconnor">Noel O'Connor</a></td>
+</tr>
+</tbody>
+</table>
+
+<p>A joint collaboration between:</p>
+
+<table>
+<thead>
+<tr>
+<th align="center"><img src="https://raw.githubusercontent.com/imatge-upc/saliency-2016-cvpr/master/logos/insight.jpg" alt="logo-insight" title="Insight Centre for Data Analytics"></th>
+<th align="center"><img src="https://raw.githubusercontent.com/imatge-upc/saliency-2016-cvpr/master/logos/dcu.png" alt="logo-dcu" title="Dublin City University"></th>
+<th align="center"><img src="https://raw.githubusercontent.com/imatge-upc/saliency-2016-cvpr/master/logos/upc.jpg" alt="logo-upc" title="Universitat Politecnica de Catalunya"></th>
+<th align="center"><img src="https://raw.githubusercontent.com/imatge-upc/saliency-2016-cvpr/master/logos/etsetb.png" alt="logo-etsetb" title="ETSETB TelecomBCN"></th>
+<th align="center"><img src="https://raw.githubusercontent.com/imatge-upc/saliency-2016-cvpr/master/logos/gpi.png" alt="logo-gpi" title="UPC Image Processing Group"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><a href="https://www.insight-centre.org/">Insight Centre for Data Analytics</a></td>
+<td align="center"><a href="http://www.dcu.ie/">Dublin City University (DCU)</a></td>
+<td align="center"><a href="http://www.upc.edu/?set_language=en">Universitat Politecnica de Catalunya (UPC)</a></td>
+<td align="center"><a href="https://www.etsetb.upc.edu/en/">UPC ETSETB TelecomBCN</a></td>
+<td align="center"><a href="https://imatge.upc.edu/web/">UPC Image Processing Group</a></td>
+</tr>
+</tbody>
+</table>
+
+<h2>
+<a id="abstract" class="anchor" href="#abstract" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Abstract</h2>
+
+<p>This work proposes a simple instance retrieval pipeline based on encoding the convolutional features of CNN using the bag of words aggregation scheme (BoW). Assigning each local array of activations in a convolutional layer to a visual word produces an assignment map, a compact representation that relates regions of an image with a visual word. We use the assignment map for fast spatial reranking, obtaining object localizations that are used for query expansion. We demonstrate the suitability of the BoW representation based on local CNN features for instance retrieval, achieving competitive performance on the Oxford and Paris buildings benchmarks. We show that our proposed system for CNN feature aggregation with BoW outperforms state-of-the-art techniques using sum pooling at a subset of the challenging TRECVid INS benchmark.</p>
+
+<h2>
+<a id="publication" class="anchor" href="#publication" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Publication</h2>
+
+<p>Find our paper at <a href="http://dx.doi.org/10.1145/2911996.2912061">ACM Digital Library</a>, <a href="https://arxiv.org/abs/1604.04653">arXiv</a> and <a href="http://doras.dcu.ie/21175/">DCU Doras</a>.</p>
+
+<p><img src="https://raw.githubusercontent.com/evamohe/BoW_CNN_InstanceSearch/master/docs/image.jpeg?token=AHPpwMnNlL9yWB3Lt7588wSrlzim1tO4ks5X1vazwA%3D%3D" alt="Image of the paper"></p>
+
+<p>Please cite with the following Bibtex code:</p>
+
+<pre><code>@inproceedings{Mohedano:2016:BLC:2911996.2912061,
+ author = {Mohedano, Eva and McGuinness, Kevin and O'Connor, Noel E. and Salvador, Amaia and Marques, Ferran and Giro-i-Nieto, Xavier},
+ title = {Bags of Local Convolutional Features for Scalable Instance Search},
+ booktitle = {Proceedings of the 2016 ACM on International Conference on Multimedia Retrieval},
+ series = {ICMR '16},
+ year = {2016},
+ isbn = {978-1-4503-4359-6},
+ location = {New York, New York, USA},
+ pages = {327--331},
+ numpages = {5},
+ url = {http://doi.acm.org/10.1145/2911996.2912061},
+ doi = {10.1145/2911996.2912061},
+ acmid = {2912061},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {bag of words, convolutional neural networks, instance retrieval},
+} 
+</code></pre>
+
+<h2>
+<a id="best-poster-award-at-icmr-2016" class="anchor" href="#best-poster-award-at-icmr-2016" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Best Poster Award at ICMR 2016</h2>
+
+<p><img src="https://github.com/imatge-upc/retrieval-2016-icmr/blob/master/docs/poster700x583.png?raw=true" alt="https://github.com/imatge-upc/retrieval-2016-icmr/raw/master/docs/icmr2016-poster.pdf"></p>
+
+<p><img src="https://github.com/imatge-upc/retrieval-2016-icmr/blob/master/authors/PosterPresenters.jpg?raw=true" alt="Poster presenters"></p>
+
+<h2>
+<a id="talk-on-video" class="anchor" href="#talk-on-video" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Talk on video</h2>
+
+      <p>This talk also covers our paper <a href="http://imatge-upc.github.io/retrieval-2016-deepvision/">"Faster R-CNN features for Instance Search"</a> at CVPR 2016 Workshop on DeepVision.</p>
+
+<center>
+<iframe src="https://player.vimeo.com/video/165478041" width="640" height="480" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<p><a href="https://vimeo.com/165478041">2016-05-Seminar-AmaiaSalvador-DeepVision</a> from <a href="https://vimeo.com/gpi">Image Processing Group</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+      </center>
+
+<h2>
+<a id="slides" class="anchor" href="#slides" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Slides</h2>
+
+<p>These slides also cover our paper <a href="http://imatge-upc.github.io/retrieval-2016-deepvision/">"Faster R-CNN features for Instance Search"</a> at CVPR 2016 Workshop on DeepVision.</p>
+      
+<center>      
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/lZzb4HdY6OEZ01" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/xavigiro/convolutional-features-for-instance-search" title="Convolutional Features for Instance Search" target="_blank">Convolutional Features for Instance Search</a> </strong> from <strong><a target="_blank" href="//www.slideshare.net/xavigiro">Xavier Giro</a></strong> </div>      
+  </center>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/imatge-upc/retrieval-2016-icmr">Bags of Local Convolutional Features for Scalable Instance Search</a> is maintained by <a href="https://github.com/imatge-upc">imatge-upc</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
