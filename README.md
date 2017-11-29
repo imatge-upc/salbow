@@ -6,7 +6,7 @@
 | ![Eva Mohedano][EvaMohedano-photo] |  ![Kevin McGuinness][KevinMcGuinness-photo] |  ![Xavier Giro-i-Nieto][XavierGiro-photo] | ![Noel O'Connor][NoelOConnor-photo]  | 
 |:-:|:-:|:-:|:-:|
 | [Eva Mohedano][EvaMohedano-web]  |  [Kevin McGuinness][KevinMcGuinness-web]   | [Xavier Giro-i-Nieto][XavierGiro-web]   | [Noel O'Connor][NoelOConnor-web]   | 
-[EvaMohedano-web]: https://www.insight-centre.org/users/eva-mohedano
+[EvaMohedano-web]: https://www.insight-centre.org/users/eva-mohedano)
 [KevinMcGuinness-web]: https://www.insight-centre.org/users/kevin-mcguinness
 [XavierGiro-web]: https://imatge.upc.edu/web/people/xavier-giro
 [NoelOConnor-web]: https://www.insight-centre.org/users/noel-oconnor
