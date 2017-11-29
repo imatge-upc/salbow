@@ -37,7 +37,7 @@ fine tuning. We investigate the impact of different saliency models, finding tha
 ## Code Instructions
 This repo contains python scripts to build Bag of Visual Words based on local CNN features to perform instance search in three different datasets:
 
-* [Instre](ftp://ftp.irisa.fr/local/texmex/corpus/instre/readme.htm), following the evaluation protocol from [Efficient Diffusion on Region Manifolds: Recovering Small Objects with Compact CNN Representations](http://people.rennes.inria.fr/Ahmet.Iscen/diffusion.html).
+* [Instre](https://dl.acm.org/citation.cfm?id=2700292), following the evaluation protocol from [Efficient Diffusion on Region Manifolds: Recovering Small Objects with Compact CNN Representations](http://people.rennes.inria.fr/Ahmet.Iscen/diffusion.html).
 * [Oxford Buildings](http://www.robots.ox.ac.uk/~vgg/data/oxbuildings/).
 * [Paris Buildings](http://www.robots.ox.ac.uk/~vgg/data/parisbuildings/).
 
