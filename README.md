@@ -30,6 +30,19 @@ A joint collaboration between:
 [logo-etsetb]: https://raw.githubusercontent.com/imatge-upc/saliency-2016-cvpr/master/logos/etsetb.png "ETSETB TelecomBCN"
 [logo-gpi]: https://raw.githubusercontent.com/imatge-upc/saliency-2016-cvpr/master/logos/gpi.png "UPC Image Processing Group"
 
+## Publication
+Find our paper at [arXiv](https://arxiv.org/pdf/1711.10795.pdf)
+
+````
+@article{mohedano2017saliency,
+  title={Saliency Weighted Convolutional Features for Instance Search},
+  author={Mohedano, Eva and McGuinness, Kevin and Giro-i-Nieto, Xavier and O'Connor, Noel E},
+  journal={arXiv preprint arXiv:1711.10795},
+  year={2017}
+}
+````
+
+
 ## Abstract 
 This work explores attention models to weight the contribution of local convolutional representations for the instance search task. We present a retrieval framework based on bags of local convolutional features (BLCF) that benefits from saliency weighting to build an efficient image representation. The use of human visual attention models (saliency) allows significant improvements in retrieval performance without the need to conduct region analysis or spatial verification, and without requiring any feature
 fine tuning. We investigate the impact of different saliency models, finding that higher performance on saliency benchmarks does not necessarily equate to improved performance when used in instance search tasks. The proposed approach outperforms the state-of-the-art on the challenging INSTRE benchmark by a large margin, and provides similar performance on the Oxford and Paris benchmarks compared to more complex methods that use off-the-shelf representations.
